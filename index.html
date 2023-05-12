@@ -8,23 +8,67 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="wraper">
-        <header>
-            <h1>Code Quiz!</h1>
-        </header>
-        <div class="card">
-            <div class="card-header">
-                <h2>Welcome to Code Quiz!</h2>
-            </div>
-            <div class="card-body">
-                <p>Try your best to answer the code related questions within the time limit. Incorrect answers will count aginst your overall score and will cause you to lose time on your timer. So be careful and keep your eye on the time left!
-                </p>
-            </div>
-            <div class="card-footer">
-                <button id="Start" class="btn">Start Quiz</button>
-            </div>
+    <header>
+        <div class="page-head">
+            <p id="timer">Time: 60 seconds</p>
         </div>
-    </div>
+        <div>
+            <button class="button" id="High-Score">Your High Score</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="Homepage">
+            <div>
+                <h1>
+                    JavaScript Quiz!
+                </h1>
+                <p id="Rules">
+                    Welcome to the JavaScript Quiz! Here you will answer questions on basics of JavaScript and test your knowledge within the time limit! However be careful, a wrong answer will result in your timer losing time!
+                </p>
+                <button class="button" id="Begin-Quiz">Begin Quiz!</button>
+            </div>
+        </section>
+        
+        <section class="Quiz" id="Quiz">
+            <div>
+                <h2 id="Queestion">Question</h2>
+                <ul>
+                    <li class="choice-btn" id="choice-btnA" value="a">choice 1</li>
+                    <li class="choice-btn" id="choice-btnB" value="a">choice 2</li>
+                    <li class="choice-btn" id="choice-btnC" value="a">choice 3</li>
+                    <li class="choice-btn" id="choice-btnD" value="a">choice 4</li>
+                </ul>
+            </div>
+            <div id="Result">
+                <p>Right! / Wrong</p>
+            </div>
+        </section>
+        
+        <section class="Quiz-Finish" id="Quiz-Finish">
+            <div>
+                <h2 id="Finish">You Did It!</h2>
+                <p id="Score">You Scored: </p>
+            </div>
+            <div>
+                <button class="button" id="DoneBtn">Done</button>
+            </div>
+        </section>
+
+        <section class="score-board" id="score-board">
+            <h2>SCORES</h2>
+            <div id="users-score">
+                <p>Score Board!</p>
+            </div>
+            <div>
+                <button class="button" id="Try-Again">Try Again</button>
+                <button class="button" id="Clear">Clear Score</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright 2022-2023</p>
+    </footer>
 	<script src="script.js"></script>
   </body>
 </html>
