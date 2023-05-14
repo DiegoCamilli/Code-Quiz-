@@ -32,8 +32,9 @@ const clearScoreBtn = document.querySelector('#clear')
 let totalScore = 0
 
 // timer
-const displayTime = document.getElementById('#timer')
-const secondsLeft = 60
+const displayTime = document.getElementById("timer")
+console.log(displayTime)
+let secondsLeft = 60
 
 // array of obj that hold the questions
 const questionBank = [
@@ -92,8 +93,10 @@ const questionBank = [
 function startQuiz() {
     Homepage.style.display = 'none'
     Quiz.style.display = 'block'
-    questionIndex = 0
+    quizFinish.style.display = 'none'
+    scoreBoard.style.display = 'none'
     startTimer()
+    questionIndex = 0
     displayQuestion(questionIndex)
 }
 
@@ -115,7 +118,7 @@ function startTimer() {
 
 function endGame() {
     Quiz.style.display = 'none'
-    quizFinish.style.display = 'bock'
+    quizFinish.style.display = 'block'
     currentScore.textContent = 'You scored ' + totalScore + ' points this time!'
     displayTime.style.display = 'none'
 }
@@ -127,7 +130,7 @@ function displayQuestion(n) {
     choiceBtnB.textContent = questionBank[n].options[1]
     choiceBtnC.textContent = questionBank[n].options[2]
     choiceBtnD.textContent = questionBank[n].options[3]
-    questionIndex = [n]
+    questionIndex = n
 }
 
 function choiceCheck(event) {
