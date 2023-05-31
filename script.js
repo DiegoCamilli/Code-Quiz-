@@ -9,7 +9,7 @@ const beginQuiz = document.querySelector('#begin-quiz')
 // quiz
 const Quiz = document.querySelector('#quiz')
 const Question = document.querySelector('#question')
-const choiceBtnA = document.querySelector('#choice-bntA')
+const choiceBtnA = document.querySelector('#choice-btnA')
 const choiceBtnB = document.querySelector('#choice-btnB')
 const choiceBtnC = document.querySelector('#choice-btnC')
 const choiceBtnD = document.querySelector('#choice-btnD')
@@ -45,7 +45,7 @@ const questionBank = [
     },
     {
         title: 'The conditions in an if/else statement is enclosed with _______.',
-        options: ['quotes', 'curly brackets', 'oarenthesis', 'square brackets'],
+        options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
         answer: 'parenthesis',
     },
     {
@@ -119,7 +119,7 @@ function startTimer() {
 function endGame() {
     Quiz.style.display = 'none'
     quizFinish.style.display = 'block'
-    currentScore.textContent = 'You scored ' + totalScore + ' points this time!'
+    currentScore.textContent = 'You scored: ' + totalScore + ' out of ' + questionBank.length + ' points!';
     displayTime.style.display = 'none'
 }
 
@@ -130,32 +130,51 @@ function displayQuestion(n) {
     choiceBtnB.textContent = questionBank[n].options[1]
     choiceBtnC.textContent = questionBank[n].options[2]
     choiceBtnD.textContent = questionBank[n].options[3]
+
+    choiceBtnA.textContent = questionBank[n].options[0];
+    choiceBtnA.value = questionBank[n].options[0];
+  
+    choiceBtnB.textContent = questionBank[n].options[1];
+    choiceBtnB.value = questionBank[n].options[1];
+  
+    choiceBtnC.textContent = questionBank[n].options[2];
+    choiceBtnC.value = questionBank[n].options[2];
+  
+    choiceBtnD.textContent = questionBank[n].options[3];
+    choiceBtnD.value = questionBank[n].options[3];
+  
+    choiceBtnA.addEventListener('click', choiceCheck);
+    choiceBtnB.addEventListener('click', choiceCheck);
+    choiceBtnC.addEventListener('click', choiceCheck);
+    choiceBtnD.addEventListener('click', choiceCheck);
+
     questionIndex = n
 }
 
 function choiceCheck(event) {
-    event.preventDefault()
-    Result.style.display = "block"
-    timeout(function () {
-        Result.style.display = "none"
+    event.preventDefault();
+    Result.style.display = "block";
+    setTimeout(function () {
+        Result.style.display = "none";
     }, 1000);
-    
-    if (questionBank[questionIndex].answer == event.target.value) {
-        Result.textContent = "Right"
-        totalScore = totalScore + 1
-    }
-    else {
-        displayTime = displayTime - 10
-        Result.textContent = "Wrong"
+
+    const selectedAnswer = event.target.value.toLowerCase();
+    const correctAnswer = questionBank[questionIndex].answer.toLowerCase();
+
+    if (selectedAnswer === correctAnswer) {
+        Result.textContent = "Right";
+        totalScore = totalScore + 1;
+    } else {
+        secondsLeft = secondsLeft - 10;
+        Result.textContent = "Wrong";
     }
 
     if (questionIndex < questionBank.length - 1) {
-        displayQuestion(questionIndex + 1)
+        displayQuestion(questionIndex + 1);
+    } else {
+        gameOver();
     }
-    else {
-        gameOver()
-    }
-    questionCount++
+    questionCount++;
 }
 
 function getScore() {
@@ -172,7 +191,7 @@ function getScore() {
 
 function orderScores() {
     const unorderedList = getScore()
-    if (getScore == null) {
+    if (unorderedList == null) {
         return
     }
     else { 
