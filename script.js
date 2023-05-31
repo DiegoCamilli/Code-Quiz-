@@ -121,6 +121,7 @@ function endGame() {
     quizFinish.style.display = 'block'
     currentScore.textContent = 'You scored: ' + totalScore + ' out of ' + questionBank.length + ' points!';
     displayTime.style.display = 'none'
+    saveScores()
 }
 
 // might sound silly but i totaly forgot and didnt know about putting the n in the () 
@@ -199,6 +200,7 @@ function orderScores() {
         unorderedList.sort(function (a, b) {
             return b.score - a.score
         })
+        return unorderedList
     }
 }
 
@@ -212,10 +214,16 @@ function displayScores() {
         const item = topScore[i]
         let li = document.createElement('li')
         li.textContent = item.score
-        li.setAttribute('data-index'. i)
+        li.setAttribute('data-index', i)
         userScores.appendChild(li)
     }
 
+}
+
+function addItem(scoreItem) {
+    let scoreList = getScore();
+    scoreList.push(scoreItem);
+    localStorage.setItem('allScores', JSON.stringify(scoreList));
 }
 
 function saveScores() {
