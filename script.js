@@ -9,11 +9,11 @@ const beginQuiz = document.querySelector('#begin-quiz')
 // quiz
 const Quiz = document.querySelector('#quiz')
 const Question = document.querySelector('#question')
-const choiceBtnA = document.querySelector('#choice-gntA')
+const choiceBtnA = document.querySelector('#choice-bntA')
 const choiceBtnB = document.querySelector('#choice-btnB')
 const choiceBtnC = document.querySelector('#choice-btnC')
 const choiceBtnD = document.querySelector('#choice-btnD')
-const AllChoiceBtns = document.querySelector('.choice-btn')
+const AllChoiceBtns = document.querySelectorAll('.choice-btn')
 const Result = document.querySelector('#result')
 let questionIndex = 0
 let questionCount = 1
