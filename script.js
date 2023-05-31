@@ -1,5 +1,5 @@
 // pagehead
-const yourHighScoreBtn = document.querySelector('#high-score')
+const highScoreBtn = document.querySelector('#high-Score')
 
 // homepage
 const Homepage = document.querySelector('#homepage')
@@ -205,7 +205,7 @@ function orderScores() {
 }
 
 function displayScores() {
-    userScores.style.display = 'none'
+    userScores.innerHTML = ''
     // here im using inner html instesd of text content because the list of scores needs to be made and changes
     userScores.innerHTML = ''
     const highScores = orderScores()
@@ -213,7 +213,7 @@ function displayScores() {
     for(let i = 0; i < topScore.length; i++) {
         const item = topScore[i]
         let li = document.createElement('li')
-        li.textContent = item.score
+        li.textContent = 'Score: ' + item.score
         li.setAttribute('data-index', i)
         userScores.appendChild(li)
     }
