@@ -28,7 +28,7 @@ const doneBtn = document.querySelector('#doneBtn')
 const scoreBoard = document.querySelector('#score-board')
 const userScores = document.querySelector('#users-score')
 const tryAgainBtn = document.querySelector('#try-again')
-const clearScoreBtn = document.querySelector('#clear')
+const clearScoreBtn = document.querySelector('#clearScore')
 let totalScore = 0
 
 // timer
@@ -267,8 +267,8 @@ yourHighScoreBtn.addEventListener('click', function (event) {
     displayScores()
 })
 
-clearScoreBtn.addEventListener('click', function (event) {
+clearScoresBtn.addEventListener('click', function (event) {
     event.preventDefault()
-    localStorage.clear()
+    localStorage.removeItem('allScores')
     displayScores()
 })
