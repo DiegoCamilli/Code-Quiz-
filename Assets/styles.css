@@ -1,0 +1,179 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  #timer {
+    font-size: 18px;
+  }
+  
+  #High-Score {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #High-Score:hover {
+    background-color: lightblue;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  #rules {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+    padding: 160px;
+  }
+  
+  .button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  
+  .button:hover {
+    background-color: lightblue;
+  }
+  
+  .Quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #question {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .choice-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .choice-btn:hover {
+    background-color: lightblue;
+  }
+  
+  #result {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .Quiz-Finish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #finish {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  #current-score {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  #doneBtn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #doneBtn:hover {
+    background-color: lightblue;
+  }
+  
+  .score-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .score-board h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #users-score {
+    margin-bottom: 20px;
+  }
+  
+  #try-again {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  #try-again:hover {
+    background-color: lightblue;
+  }
+  
+  #clearScore {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #clearScore:hover {
+    background-color: lightblue;
+  }
+  
+  footer {
+    margin-top: 50px;
+    text-align: center;
+  }
